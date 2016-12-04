@@ -1,0 +1,14 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryDark">@color/darkPrimaryColor</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColor">@color/textAndIcons</item>
+        <item name="android:colorPressedHighlight">@color/lightPrimaryColor</item>
+        <item name="android:windowActionBar">false</item>
+    </style>
+
+</resources>

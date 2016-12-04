@@ -1,0 +1,125 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/main_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="2dp"
+        android:minHeight="?attr/actionBarSize"
+        android:background="@color/primaryColor" />
+
+    <RelativeLayout
+        android:id="@+id/fixed_marker_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="2dp"
+        android:layout_centerInParent="true">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:layout_centerInParent="true">
+
+            <TextView
+                android:id="@+id/fixed_marker_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="Endereço aqui"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp"
+                android:gravity="center"
+                android:layout_centerHorizontal="true"
+                android:layout_above="@+id/fixed_marker"
+                android:layout_marginBottom="8dp"
+                android:textColor="@android:color/black"
+                android:background="@drawable/rounded"/>
+
+            <ImageView
+                android:id="@+id/fixed_marker"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerInParent="true"
+
+                android:src="@drawable/pin"/>
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/main_toolbar"
+        tools:context=".ui.MapsActivity" />
+
+    <include
+        android:layout_below="@+id/main_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/include_alert_description" />
+
+
+    <RelativeLayout
+        android:id="@+id/maps_bottom_container"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:visibility="gone"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/map_info_bottom_bg">
+
+        <TextView
+            android:id="@+id/time_ago"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="8 min"
+            android:gravity="center"
+            android:layout_marginLeft="16dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:drawableLeft="@drawable/ic_action_schedule" />
+
+        <TextView
+            android:id="@+id/distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginRight="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:drawableLeft="@drawable/ic_communication_location_on"
+            android:drawableStart="@drawable/ic_communication_location_on"/>
+
+    </RelativeLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/create_alert"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginRight="36dp"
+        android:layout_marginBottom="36dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/ic_add_white_48dp"/>
+
+    <View
+        android:id="@+id/general_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="4dp">
+
+    </View>
+
+</RelativeLayout>
